@@ -1,10 +1,12 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class SimulationDriver {
 	public static void main(String args[]) {
 		//Create question
-		Question question = new MultipleChoiceQuestion();
+		Question question = new SingleChoiceQuestion();
+		System.out.println(question.getType());
 
 		//Configure question for VotingService
 		VotingService votingService = new VotingService(question);
@@ -30,6 +32,7 @@ public class SimulationDriver {
 			sb.setLength(0);
 		}
 
+		//Generate random answers from students
 		for (int i = 0; i < studentList.size(); i++) {
 			String answer = question.getAnswerChoices().get(rand.nextInt(question.getAnswerChoices().size()));
 			studentList.get(i).submitAnswer(answer); 

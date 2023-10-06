@@ -33,10 +33,12 @@ public class VotingService {
 		}
 
 		//Print student answers
-		System.out.println("SUBMISSIONS");
+		System.out.println("ID      ANSWER");
 		for (Entry<String, String> entry : studentSubmissions.entrySet()) {
 			System.out.println(entry.getKey() + ": " + entry.getValue());
 		}
+
+		System.out.println();
 
 		//Print results
 		System.out.println("RESULTS:");
